@@ -33,10 +33,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: "https://twitter.com/ycjourney", label: "Twitter" },
-    { icon: Linkedin, href: "https://linkedin.com/company/ycjourney", label: "LinkedIn" },
-    { icon: Github, href: "https://github.com/ycjourney", label: "GitHub" },
-    { icon: Mail, href: "mailto:hello@ycjourney.com", label: "Email" },
+    { icon: Twitter, href: "https://x.com/MontyDevX", label: "Twitter" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/monti-saini-870b65252", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/Monti-27", label: "GitHub" },
+    { icon: Mail, href: "mailto:work.monti.27@gmail.com", label: "Email" },
   ];
 
   return (
@@ -60,8 +60,11 @@ const Footer = () => {
                 YC Journey
               </span>
             </div>
-            <p className="text-gray-400 text-sm mb-6 max-w-xs">
-              Accelerating startups from idea to YC acceptance. Join hundreds of successful founders.
+            <blockquote className="text-gray-300 text-sm mb-2 max-w-xs italic">
+              "The way to get started is to quit talking and begin doing."
+            </blockquote>
+            <p className="text-gray-500 text-xs mb-6">
+              — Walt Disney
             </p>
             
             {/* Social links */}
@@ -117,7 +120,7 @@ const Footer = () => {
           className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center"
         >
           <p className="text-gray-400 text-sm">
-            © 2024 YC Journey. All rights reserved.
+            Made with love ❤️ by Monti Saini
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
