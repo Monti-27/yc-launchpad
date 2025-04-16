@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Zap, TrendingUp, Rocket, Users, Award, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Zap, TrendingUp, Rocket, Users, Award, ChevronDown } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import FloatingCard from "@/components/FloatingCard";
-import GlowingButton from "@/components/GlowingButton";
 import FlipWordsDemo from "@/components/flip-words-demo";
 import NavbarDemo from "@/components/resizable-navbar-demo";
 import Footer from "@/components/Footer";
@@ -15,6 +13,13 @@ import { Spotlight } from "@/components/ui/Spotlight";
 import BackgroundGradientCard from "@/components/ui/background-gradient-card";
 import GridBackgroundDemo from "@/components/ui/grid-background-demo";
 import TextGenerateEffectDemo from "@/components/text-generate-effect-demo";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
+import { EnhancedFeatureCard } from "@/components/ui/enhanced-feature-card";
+import { SocialProofLogos } from "@/components/ui/social-proof-logos";
+import { EnhancedCTASection } from "@/components/ui/enhanced-cta-section";
+import { FAQSection } from "@/components/ui/faq-section";
+import { FeatureGlareCard } from "@/components/ui/feature-glare-card";
+import { StartJourneyButton, WatchDemoButton } from "@/components/ui/enhanced-buttons";
 
 const Index = () => {
   // Ensure page starts at the top with multiple approaches
@@ -38,10 +43,10 @@ const Index = () => {
   }, []);
 
   const stats = [
-    { number: "500+", label: "Startups Accelerated", icon: Rocket },
-    { number: "98%", label: "Success Rate", icon: TrendingUp },
-    { number: "$2B+", label: "Total Funding Raised", icon: Award },
-    { number: "50+", label: "Expert Mentors", icon: Users },
+    { number: 500, label: "Startups Accelerated", icon: Rocket, suffix: "+" },
+    { number: 98, label: "Success Rate", icon: TrendingUp, suffix: "%" },
+    { number: 2, label: "Total Funding Raised", icon: Award, prefix: "$", suffix: "B+" },
+    { number: 50, label: "Expert Mentors", icon: Users, suffix: "+" },
   ];
 
   const features = [
@@ -65,36 +70,35 @@ const Index = () => {
   const testimonials = [
     {
       id: 0,
-      name: "Manu Arora",
-      designation: "Senior Software Engineer",
+      name: "Sarah Chen",
+      designation: "Founder, TechFlow AI",
       content: (
         <p>
-          These cards are amazing, I want to use them in my project. Framer
-          motion is a godsend ngl tbh fam 🙏
+          "This program completely transformed how I approach building my startup. 
+          Within 3 months, I had a clear go-to-market strategy and landed my first enterprise client."
         </p>
       ),
     },
     {
       id: 1,
-      name: "Elon Musk",
-      designation: "Senior Shitposter",
+      name: "Marcus Rodriguez",
+      designation: "CEO, GreenLogistics",
       content: (
         <p>
-          I dont like this Twitter thing, deleting it right away because yolo.
-          Instead, I would like to call it X.com so that it can easily be
-          confused with adult sites.
+          "The mentor network is incredible. My assigned mentor was a YC alumnus 
+          who helped me refine my pitch and avoid common fundraising mistakes. 
+          Just raised our seed round!"
         </p>
       ),
     },
     {
       id: 2,
-      name: "Tyler Durden",
-      designation: "Manager Project Mayhem",
+      name: "Alex Kim",
+      designation: "Co-founder, DataBridge",
       content: (
         <p>
-          The first rule of Fight Club is that you do not talk about fight
-          club. The second rule of Fight club is that you DO NOT TALK about
-          fight club.
+          "Best investment I've made in my entrepreneurial journey. The frameworks 
+          and community support helped me pivot successfully and find product-market fit."
         </p>
       ),
     },
@@ -103,48 +107,34 @@ const Index = () => {
   const movingCardsTestimonials = [
     {
       quote:
-        "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-      name: "Charles Dickens",
-      title: "A Tale of Two Cities",
+        "The best way to predict the future is to create it. This program gave me the tools and confidence to build the company I always dreamed of.",
+      name: "Jennifer Walsh",
+      title: "Founder, HealthTech Solutions",
     },
     {
       quote:
-        "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-      name: "William Shakespeare",
-      title: "Hamlet",
-    },
-    {
-      quote: "All that we see or seem is but a dream within a dream.",
-      name: "Edgar Allan Poe",
-      title: "A Dream Within a Dream",
+        "In just 90 days, I went from having an idea to having a validated business model with paying customers. The mentorship was game-changing.",
+      name: "David Chen",
+      title: "CEO, EcoLogistics",
     },
     {
       quote:
-        "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-      name: "Jane Austen",
-      title: "Pride and Prejudice",
+        "The network effect is real. I've made connections that have led to partnerships, customers, and even potential investors.",
+      name: "Maria Gonzalez",
+      title: "Founder, EdTech Innovations",
     },
     {
       quote:
-        "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-      name: "Herman Melville",
-      title: "Moby-Dick",
-    },
-  ];
-
-  const featureBackgrounds = [
-    {
-      default: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80",
-      hover: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80"
+        "Finally, a program that focuses on execution rather than just theory. Every session was actionable and immediately applicable to my business.",
+      name: "Ryan Thompson",
+      title: "Co-founder, FinTech Pro",
     },
     {
-      default: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80",
-      hover: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80"
+      quote:
+        "The pitch deck review alone was worth the entire program fee. My presentation went from amateur to investor-ready in weeks.",
+      name: "Lisa Park",
+      title: "Founder, AI Analytics Corp",
     },
-    {
-      default: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80",
-      hover: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80"
-    }
   ];
 
   return (
@@ -198,19 +188,13 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
           >
-            <GlowingButton className="px-8 py-4 text-lg">
-              Start Your Journey
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </GlowingButton>
-            
-            <Button variant="outline" className="px-8 py-4 text-lg border-purple-500/50 hover:border-purple-400 bg-transparent text-white hover:bg-purple-500/10">
-              Watch Demo
-            </Button>
+            <StartJourneyButton />
+            <WatchDemoButton />
           </motion.div>
 
-          {/* Stats */}
+          {/* Enhanced Stats with Animated Counters */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -221,7 +205,12 @@ const Index = () => {
               <FloatingCard key={index} delay={index * 0.1}>
                 <div className="text-center">
                   <stat.icon className="h-8 w-8 text-purple-400 mx-auto mb-2" />
-                  <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
+                  <AnimatedCounter
+                    end={stat.number}
+                    prefix={stat.prefix}
+                    suffix={stat.suffix}
+                    className="text-3xl font-bold text-white mb-1"
+                  />
                   <div className="text-sm text-gray-400">{stat.label}</div>
                 </div>
               </FloatingCard>
@@ -239,7 +228,10 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* Features Section */}
+      {/* Social Proof Logos */}
+      <SocialProofLogos />
+
+      {/* Enhanced Features Section */}
       <section className="relative z-20 py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -257,27 +249,15 @@ const Index = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 justify-items-center">
+          <div className="grid md:grid-cols-3 gap-8 justify-items-center max-w-5xl mx-auto">
             {features.map((feature, index) => (
-              <motion.div
+              <FeatureGlareCard
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <BackgroundGradientCard
-                  backgroundImage={featureBackgrounds[index].default}
-                  hoverBackgroundImage={featureBackgrounds[index].hover}
-                  containerClassName="w-full max-w-sm"
-                >
-                  <div className="text-center">
-                    <feature.icon className="h-12 w-12 text-white mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                    <h3 className="text-xl font-semibold mb-4 text-white">{feature.title}</h3>
-                    <p className="text-gray-200 font-normal leading-relaxed">{feature.description}</p>
-                  </div>
-                </BackgroundGradientCard>
-              </motion.div>
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+                delay={index * 0.2}
+              />
             ))}
           </div>
         </div>
@@ -286,9 +266,17 @@ const Index = () => {
       {/* Infinite Moving Cards Section */}
       <section className="relative z-20 py-20 px-4">
         <div className="max-w-7xl mx-auto">
-            <h2 className="text-section-title font-bold mb-6 bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent text-center">
-              From the best minds in the world
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-section-title font-bold mb-6 bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+              Success Stories from Our Community
             </h2>
+          </motion.div>
           <div className="flex flex-col items-center justify-center">
             <InfiniteMovingCards
               items={movingCardsTestimonials}
@@ -323,28 +311,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative z-20 py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 rounded-3xl p-12"
-          >
-            <h2 className="text-section-title font-bold mb-6 text-white">
-              Ready to Accelerate?
-            </h2>
-            <p className="text-xl font-medium text-gray-300 mb-8">
-              Join the next cohort and transform your idea into a funded startup in record time.
-            </p>
-            <GlowingButton className="px-12 py-4 text-lg">
-              Apply Now - Limited Spots
-            </GlowingButton>
-          </motion.div>
-        </div>
-      </section>
+      {/* FAQ Section */}
+      <FAQSection />
+
+      {/* Enhanced CTA Section */}
+      <EnhancedCTASection />
 
       <Footer />
     </div>
