@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Zap, Twitter, Linkedin, Github, Mail } from "lucide-react";
 
@@ -6,23 +5,38 @@ const Footer = () => {
   const footerLinks = [
     {
       title: "Program",
-      links: ["Overview", "Curriculum", "Mentors", "Success Stories"],
+      links: [
+        { name: "Overview", href: "/program" },
+        { name: "Curriculum", href: "/curriculum" },
+        { name: "Mentors", href: "/mentors" },
+        { name: "Success Stories", href: "/success-stories" }
+      ],
     },
     {
       title: "Resources",
-      links: ["Blog", "Podcast", "Templates", "Community"],
+      links: [
+        { name: "Blog", href: "/blog" },
+        { name: "Podcast", href: "/podcast" },
+        { name: "Templates", href: "/templates" },
+        { name: "Community", href: "/community" }
+      ],
     },
     {
       title: "Company",
-      links: ["About", "Careers", "Contact", "Privacy"],
+      links: [
+        { name: "About", href: "/about" },
+        { name: "Careers", href: "/careers" },
+        { name: "Contact", href: "/contact" },
+        { name: "Privacy", href: "/privacy" }
+      ],
     },
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Mail, href: "#", label: "Email" },
+    { icon: Twitter, href: "https://twitter.com/ycjourney", label: "Twitter" },
+    { icon: Linkedin, href: "https://linkedin.com/company/ycjourney", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/ycjourney", label: "GitHub" },
+    { icon: Mail, href: "mailto:hello@ycjourney.com", label: "Email" },
   ];
 
   return (
@@ -56,6 +70,8 @@ const Footer = () => {
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="w-10 h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-400/50 transition-all duration-300"
                   aria-label={social.label}
@@ -78,12 +94,12 @@ const Footer = () => {
               <h3 className="text-white font-semibold mb-4">{section.title}</h3>
               <ul className="space-y-2">
                 {section.links.map((link) => (
-                  <li key={link}>
+                  <li key={link.name}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                     >
-                      {link}
+                      {link.name}
                     </a>
                   </li>
                 ))}
@@ -104,10 +120,10 @@ const Footer = () => {
             © 2024 YC Journey. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <a href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <a href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
               Privacy Policy
             </a>
           </div>
