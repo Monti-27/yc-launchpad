@@ -1,3 +1,6 @@
+/* Import Google Fonts - Inter for modern startup typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -32,7 +35,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 240 5.9% 10%;
 
     --radius: 0.5rem;
 
@@ -67,20 +70,20 @@
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary-foreground: 240 3.7% 15.9%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 240 5% 96.1%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 240 5% 96.1%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 240 4.9% 83.9%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -98,6 +101,59 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  /* Enhanced typography with Inter font */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter;
+  }
+}
+
+@layer utilities {
+  /* Typography utilities for different font weights */
+  .font-light { font-weight: 300; }
+  .font-normal { font-weight: 400; }
+  .font-medium { font-weight: 500; }
+  .font-semibold { font-weight: 600; }
+  .font-bold { font-weight: 700; }
+  .font-extrabold { font-weight: 800; }
+  .font-black { font-weight: 900; }
+  
+  /* Custom text sizes optimized for Inter */
+  .text-hero { 
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+  
+  .text-section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .animate-scroll {
+    animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+  }
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+
+  .animate-spotlight {
+    animation: spotlight 2s ease .75s 1 forwards;
+  }
+
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%,-40%) scale(1);
+    }
   }
 }
