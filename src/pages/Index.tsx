@@ -163,7 +163,7 @@ const Index = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative z-20 pt-32 pb-20 px-4">
+      <section className="relative z-20 pt-32 pb-20 px-4" role="banner" aria-label="Hero section">
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="white"
@@ -175,7 +175,7 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <span className="inline-block px-4 py-2 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm mb-6">
+            <span className="inline-block px-4 py-2 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm mb-6" role="banner">
               🚀 Join the YC Success Revolution
             </span>
             
@@ -185,9 +185,13 @@ const Index = () => {
               </Cover>
             </h1>
             
-            <FlipWordsDemo />
+            <div role="presentation" aria-label="Animated tagline">
+              <FlipWordsDemo />
+            </div>
             
-            <TextGenerateEffectDemo />
+            <div role="presentation" aria-label="Description text animation">
+              <TextGenerateEffectDemo />
+            </div>
           </motion.div>
 
           <motion.div
