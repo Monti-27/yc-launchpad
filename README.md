@@ -1,73 +1,162 @@
-# Welcome to your Lovable project
+# YC Journey - Startup Accelerator Landing Page
 
-## Project info
+A modern, interactive landing page for YC Journey - a startup accelerator program designed to help entrepreneurs transform their ideas into YC-ready companies.
 
-**URL**: https://lovable.dev/projects/1adc1753-56d7-4a87-9bc4-9edf83f52d67
+## 🚀 Features
 
-## How can I edit this code?
+### ✨ **Interactive UI Components**
+- **Cover Component**: Animated text with sparkles and beam effects on hover
+- **Resizable Navbar**: Responsive navigation that shrinks on scroll
+- **FlipWords Animation**: Smooth vertical text transitions
+- **Text Generate Effect**: Typewriter-style text animation with blur effects
+- **Infinite Moving Cards**: Continuous testimonial carousel
+- **Card Stack**: Interactive testimonial cards with 3D effects
+- **Background Animations**: Grid background with spotlight effects
 
-There are several ways of editing your application.
+### 🎨 **Design System**
+- **Typography**: Inter font family with custom weight utilities
+- **Color Scheme**: Purple-focused gradient design with dark theme
+- **Responsive Design**: Mobile-first approach with breakpoint optimization
+- **Accessibility**: ARIA labels and semantic HTML structure
 
-**Use Lovable**
+### 🛠️ **Tech Stack**
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+- **Aceternity UI** components
+- **Lucide React** for icons
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1adc1753-56d7-4a87-9bc4-9edf83f52d67) and start prompting.
+## 📦 Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/yc-journey.git
+   cd yc-journey
+   ```
 
-**Use your preferred IDE**
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-Follow these steps:
+## 🏗️ Project Structure
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/           # Reusable UI components
+│   ├── ui/              # Core UI components (shadcn/ui)
+│   ├── resizable-navbar-demo.tsx
+│   ├── flip-words-demo.tsx
+│   ├── text-generate-effect-demo.tsx
+│   └── ...
+├── pages/               # Page components
+│   └── Index.tsx        # Main landing page
+├── lib/                 # Utilities and helpers
+└── hooks/               # Custom React hooks
 ```
 
-**Edit a file directly in GitHub**
+## 🎯 Components Overview
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### **Navbar**
+- Responsive design with mobile hamburger menu
+- Scroll-responsive behavior (shrinks after 100px scroll)
+- YC Journey branding with gradient logo
+- Smooth animations and backdrop blur effects
 
-**Use GitHub Codespaces**
+### **Hero Section**
+- Animated Cover component with "YC JOURNEY" text
+- FlipWords showing rotating taglines
+- Text generation effect for description
+- Call-to-action buttons with glow effects
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### **Features Section**
+- Background gradient cards with hover effects
+- Icon animations and scale transforms
+- Responsive grid layout
 
-## What technologies are used for this project?
+### **Testimonials**
+- Card stack with 3D rotation effects
+- Infinite moving testimonial carousel
+- Smooth animations and transitions
 
-This project is built with:
+## 🎨 Styling & Theming
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### **Typography System**
+```css
+.text-hero          /* Hero titles: clamp(2.5rem, 8vw, 6rem) */
+.text-section-title /* Section titles: clamp(2rem, 5vw, 3.5rem) */
+.font-light         /* 300 weight */
+.font-medium        /* 500 weight */
+.font-semibold      /* 600 weight */
+.font-bold          /* 700 weight */
+.font-extrabold     /* 800 weight */
+.font-black         /* 900 weight */
+```
 
-## How can I deploy this project?
+### **Color Palette**
+- Primary: Purple gradients (`from-purple-500 to-pink-500`)
+- Text: White with purple accents
+- Background: Dark theme with grid patterns
+- Accent: Purple/blue gradients for highlights
 
-Simply open [Lovable](https://lovable.dev/projects/1adc1753-56d7-4a87-9bc4-9edf83f52d67) and click on Share -> Publish.
+## 🔧 Configuration
 
-## Can I connect a custom domain to my Lovable project?
+### **Tailwind Config**
+- Inter font family as default
+- Custom animation keyframes
+- Extended color palette
+- Responsive breakpoints
 
-Yes, you can!
+### **Environment**
+- TypeScript strict mode enabled
+- ESLint configuration
+- Vite development server
+- Hot module replacement
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📱 Responsive Design
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- **Mobile**: Hamburger menu, stacked layout
+- **Tablet**: Optimized spacing and typography
+- **Desktop**: Full layout with hover effects
+- **Large screens**: Maximum width constraints
+
+## 🚀 Performance
+
+- **Fast loading**: Vite build optimization
+- **Lazy loading**: Components loaded on demand
+- **Optimized fonts**: Google Fonts with display=swap
+- **Minimal bundle**: Tree-shaking enabled
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🎉 Acknowledgments
+
+- **Aceternity UI** for beautiful component library
+- **Tailwind CSS** for utility-first styling
+- **Framer Motion** for smooth animations
+- **Lucide React** for consistent iconography
+
+---
+
+Built with ❤️ for the startup community
