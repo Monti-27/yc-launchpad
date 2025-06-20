@@ -11,7 +11,6 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
-import { Zap } from "lucide-react";
 import GlowingButton from "./GlowingButton";
 
 // Custom YC Journey Logo Component
@@ -22,9 +21,13 @@ const YCJourneyLogo = () => {
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal hover:scale-105 transition-transform duration-200"
       aria-label="YC Journey Home"
     >
-      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-lg">
-        <Zap className="h-5 w-5 text-white" />
-      </div>
+      <img
+        src="/favicon.svg"
+        alt="YC Journey Logo"
+        width={32}
+        height={32}
+        className="rounded-lg"
+      />
       <span className="text-xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
         YC Journey
       </span>
